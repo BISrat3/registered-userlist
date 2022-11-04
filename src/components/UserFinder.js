@@ -26,6 +26,7 @@ class UserFinder extends Component {
         // send http request
         this.setState({ filteredUsers:this.context.users})
     }
+    
     componentDidUpdate (prevProps, prevState){
             if (prevState.searchTerm !== this.state.searchTerm){
                 this.setState({
