@@ -4,12 +4,6 @@ import classes from './UserFinder.module.css'
 import UsersContext from '../store/users-context'
 import ErrorBoundary from './ErrorBoundary'
 
-// const DUMMY_USERS = [
-//     {id:'u1', name:'Max'},
-//     {id:'u2', name:'Manuel'},
-//     {id:'u3', name:'Julie'},
-// ]
-
 class UserFinder extends Component {
     static contextType = UsersContext;
 
@@ -26,7 +20,7 @@ class UserFinder extends Component {
         // send http request
         this.setState({ filteredUsers:this.context.users})
     }
-    
+
     componentDidUpdate (prevProps, prevState){
             if (prevState.searchTerm !== this.state.searchTerm){
                 this.setState({
@@ -57,6 +51,12 @@ class UserFinder extends Component {
 }
 
 export default UserFinder
+
+// const DUMMY_USERS = [
+//     {id:'u1', name:'Max'},
+//     {id:'u2', name:'Manuel'},
+//     {id:'u3', name:'Julie'},
+// ]
 
 // export default function UserFinder() {
 //     const[filteredUsers, setFilteredUsers] = useState(DUMMY_USERS)
